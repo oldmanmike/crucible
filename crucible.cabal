@@ -1,0 +1,42 @@
+name:                       crucible
+version:                    0.0.0.1
+synopsis:                   An EDSL for generating SPIR-V
+description:                Please see README.md
+homepage:                   https://github.com/oldmanmike/crucible#readme
+bug-reports:                https://github.com/oldmanmike/crucible/issues
+license:                    BSD3
+license-file:               LICENSE
+author:                     Michael Carpenter
+maintainer:                 Michael Carpenter <mcarpenter.dev@gmail.com>
+copyright:                  Copyright (C) 2016 Michael Carpenter
+category:                   Graphics
+build-type:                 Simple
+extra-source-files:         README.md, LICENSE
+cabal-version:              >=1.10
+
+library
+    hs-source-dirs:         src
+    exposed-modules:        Lib
+    build-depends:          base >= 4.7 && < 5
+    default-language:       Haskell2010
+
+executable crucible
+    hs-source-dirs:         app
+    main-is:                Main.hs
+    ghc-options:            -threaded -rtsopts -with-rtsopts=-N
+    build-depends:          base,
+                            crucible
+    default-language:       Haskell2010
+
+test-suite crucible-test
+    type:                   exitcode-stdio-1.0
+    hs-source-dirs:         test
+    main-is:                Spec.hs
+    build-depends:          base,
+                            crucible
+    ghc-options:            -threaded -rtsopts -with-rtsopts=-N
+    default-language:       Haskell2010
+
+source-repository head
+    type:     git
+    location: https://github.com/oldmanmike/crucible
