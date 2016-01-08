@@ -1,9 +1,9 @@
-name:                       crucible
+name:                       tokamak
 version:                    0.0.0.1
-synopsis:                   An EDSL for generating SPIR-V
+synopsis:                   A Haskell GPGPU DSL that targets SPIR-V
 description:                Please see README.md
-homepage:                   https://github.com/oldmanmike/crucible#readme
-bug-reports:                https://github.com/oldmanmike/crucible/issues
+homepage:                   https://github.com/oldmanmike/tokamak#readme
+bug-reports:                https://github.com/oldmanmike/tokamak/issues
 license:                    BSD3
 license-file:               LICENSE
 author:                     Michael Carpenter
@@ -20,23 +20,23 @@ library
     build-depends:          base >= 4.7 && < 5
     default-language:       Haskell2010
 
-executable crucible
+executable tokamak
     hs-source-dirs:         app
     main-is:                Main.hs
     ghc-options:            -threaded -rtsopts -with-rtsopts=-N
     build-depends:          base,
-                            crucible
+                            tokamak
     default-language:       Haskell2010
 
-test-suite crucible-test
+test-suite tokamak-test
     type:                   exitcode-stdio-1.0
     hs-source-dirs:         test
     main-is:                Spec.hs
     build-depends:          base,
-                            crucible
+                            tokamak
     ghc-options:            -threaded -rtsopts -with-rtsopts=-N
     default-language:       Haskell2010
 
 source-repository head
     type:     git
-    location: https://github.com/oldmanmike/crucible
+    location: https://github.com/oldmanmike/tokamak
